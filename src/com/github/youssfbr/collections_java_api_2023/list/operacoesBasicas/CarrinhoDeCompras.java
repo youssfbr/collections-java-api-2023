@@ -6,6 +6,7 @@ import java.util.List;
 public class CarrinhoDeCompras {
 
     private final List<Item> items = new ArrayList<>();
+    private static final String MENSAGEM_LISTA_VAZIA = "A lista está vazia!";
 
     public void adicionarItem(String nome, double preco, int quantidade) {
         items.add(new Item(nome, preco, quantidade));
@@ -24,7 +25,7 @@ public class CarrinhoDeCompras {
             items.removeAll(itensASeremRemovidos);
         }
         else {
-            System.out.println("A lista está vazia!");
+            System.out.println(MENSAGEM_LISTA_VAZIA);
         }
     }
 
@@ -37,7 +38,7 @@ public class CarrinhoDeCompras {
             }
             return valorTotal;
         } else {
-            throw new RuntimeException("A lista está vazia!");
+            throw new RuntimeException(MENSAGEM_LISTA_VAZIA);
         }
     }
 
@@ -45,7 +46,7 @@ public class CarrinhoDeCompras {
         if (!items.isEmpty()) {
             System.out.println(this.items);
         } else {
-            System.out.println("A lista está vazia!");
+            System.out.println(MENSAGEM_LISTA_VAZIA);
         }
     }
 
